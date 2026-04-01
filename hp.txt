@@ -1,0 +1,281 @@
+You are a senior full-stack SaaS architect and engineer.
+
+Generate a complete production-ready SaaS Hotel Management System.
+
+Tech Stack
+
+Frontend:
+
+- React
+- Vite
+- TailwindCSS
+- React Router
+- Axios
+
+Backend:
+
+- Node.js
+- Express.js
+- JWT authentication
+- bcrypt for password hashing
+
+Database:
+
+- SQLite for development
+- PostgreSQL for production
+
+ORM:
+
+- Prisma
+
+Architecture:
+
+- Multi-tenant SaaS architecture
+- Each hotel has a unique hotel_id
+- All tables must include hotelId where appropriate
+
+User Roles:
+
+- SUPER_ADMIN
+- OWNER
+- MANAGER
+- RECEPTIONIST
+- HOUSEKEEPING
+
+Main Modules
+
+1. Authentication
+
+- register
+- login
+- logout
+- change password
+- JWT authentication
+- role-based access control
+
+2. Hotel Management
+
+- create hotel
+- update hotel
+- manage hotel settings
+
+3. Room Management
+
+- create rooms
+- room types
+- room pricing
+- room status
+- amenities
+
+4. Reservation System
+
+- create reservation
+- modify reservation
+- cancel reservation
+- check-in
+- check-out
+
+5. Guest CRM
+
+- create guest profile
+- guest stay history
+- guest contact information
+
+6. Housekeeping
+
+- room cleaning tasks
+- staff assignments
+- maintenance reports
+
+7. Billing & Payments
+
+- generate invoices
+- record payments
+- payment history
+
+8. Reports
+
+- occupancy rate
+- revenue
+- daily sales
+- monthly reports
+
+9. SaaS Admin
+
+- manage hotels
+- manage users
+- manage subscriptions
+- analytics dashboard
+
+Project Structure
+
+Root
+
+hotel-saas/
+├ client
+├ server
+├ docker
+└ README.md
+
+Frontend Structure
+
+client/src/
+
+api/
+components/
+layouts/
+pages/
+hooks/
+context/
+utils/
+
+Pages
+
+Login
+Dashboard
+Rooms
+Reservations
+Guests
+Housekeeping
+Reports
+Billing
+Settings
+
+Backend Structure
+
+server/src/
+
+controllers/
+routes/
+models/
+middleware/
+services/
+config/
+utils/
+
+Database
+
+Create Prisma schema with models:
+
+User
+Hotel
+RoomType
+Room
+Guest
+Reservation
+Payment
+Subscription
+
+Enums:
+
+Role
+RoomStatus
+ReservationStatus
+
+API Design
+
+Authentication
+POST /api/auth/register
+POST /api/auth/login
+GET /api/auth/profile
+
+Hotels
+GET /api/hotels
+POST /api/hotels
+
+Rooms
+GET /api/rooms
+POST /api/rooms
+
+Reservations
+POST /api/reservations
+POST /api/reservations/:id/checkin
+POST /api/reservations/:id/checkout
+
+Guests
+GET /api/guests
+POST /api/guests
+
+Payments
+POST /api/payments
+GET /api/payments
+
+Reports
+GET /api/reports/revenue
+GET /api/reports/occupancy
+
+Frontend UI Requirements
+
+Use TailwindCSS to build:
+
+Dashboard Layout
+Sidebar Navigation
+Top Navbar
+Responsive UI
+
+Dashboard Widgets:
+
+Total Revenue
+Occupancy Rate
+Today's Check-ins
+Today's Check-outs
+Available Rooms
+
+Security
+
+- JWT authentication
+- bcrypt password hashing
+- role-based access middleware
+- input validation
+
+Environment Configuration
+
+.env example
+
+DATABASE_URL=
+JWT_SECRET=
+PORT=
+
+Development Mode
+
+Use SQLite
+
+Production Mode
+
+Use PostgreSQL
+
+DevOps
+
+Generate:
+
+Dockerfile
+docker-compose.yml
+setup instructions
+
+Documentation
+
+Generate README.md explaining:
+
+- how to install
+- how to run
+- how to migrate database
+- how to deploy
+
+Output Requirements
+
+Generate:
+
+1. Full folder structure
+2. Backend API code
+3. Prisma database schema
+4. React frontend UI
+5. Tailwind dashboard layout
+6. Authentication system
+7. Example API requests
+8. Deployment guide
+
+The generated project should be ready to run locally after running:
+
+npm install
+npx prisma migrate dev
+npm run dev

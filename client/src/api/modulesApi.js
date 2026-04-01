@@ -1,0 +1,22 @@
+import http from './http';
+
+export const fetchHotels = () => http.get('/hotels');
+export const fetchRooms = (hotelId) => http.get('/rooms', { params: { hotelId } });
+export const fetchRoomTypes = (hotelId) => http.get('/rooms/types', { params: { hotelId } });
+export const createRoomType = (payload) => http.post('/rooms/types', payload);
+export const updateRoomType = (roomTypeId, payload) => http.put(`/rooms/types/${roomTypeId}`, payload);
+export const fetchReservations = (hotelId) => http.get('/reservations', { params: { hotelId } });
+export const updateReservation = (reservationId, payload) => http.put(`/reservations/${reservationId}`, payload);
+export const checkInReservation = (reservationId, payload = {}) => http.patch(`/reservations/${reservationId}/check-in`, payload);
+export const checkOutReservation = (reservationId) => http.patch(`/reservations/${reservationId}/check-out`);
+export const fetchGuests = (hotelId) => http.get('/guests', { params: { hotelId } });
+export const fetchHousekeepingDashboard = (hotelId) => http.get('/housekeeping', { params: { hotelId } });
+export const fetchTasks = fetchHousekeepingDashboard;
+export const createHousekeepingTask = (payload) => http.post('/housekeeping', payload);
+export const updateTask = (taskId, payload) => http.put(`/housekeeping/${taskId}`, payload);
+export const fetchInvoices = (hotelId) => http.get('/billing/invoices', { params: { hotelId } });
+export const fetchPayments = (hotelId) => http.get('/billing/payments', { params: { hotelId } });
+export const fetchBillingSummary = (hotelId) => http.get('/billing/summary', { params: { hotelId } });
+export const createPayment = (payload) => http.post('/billing/payments', payload);
+export const fetchSubscriptions = () => http.get('/admin/subscriptions');
+export const fetchPlatformAnalytics = () => http.get('/admin/analytics');
